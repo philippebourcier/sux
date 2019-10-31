@@ -1,0 +1,38 @@
+
+   ________ ______  ___
+  /  ___/  ||  \  \/  /
+ _\___ \|  |/  />    <
+/______>______//__/\_ \
+                     \/
+
+*** COMPILING
+
+Use make
+
+
+*** MAN
+
+  This code is published under the BSD License:
+  http://www.opensource.org/licenses/bsd-license.php
+
+  The main idea is to replace "... | sort | uniq -c [ | sort -(r)(n) ] [ | head -N ]"
+  This program is faster and less memory consuming than the above commands.
+
+  Sample use:
+
+   # cat file.txt | awk ... | sort | uniq -c | sort -rn | head -n 20
+   will be replaced by:
+   # cat file.txt | awk ... | sux -rn 20
+
+   # cat file.txt | awk ... | sort | uniq -c | sort -n
+   will be replaced by:
+   # cat file.txt | awk ... | sux -s
+
+   # cat file.txt | awk ... | sort | uniq -c
+   will be replaced by:
+   # cat file.txt | awk ... | sux
+
+   # cat file.txt | awk ... | sort | uniq -c | head -n 20
+   will be replaced by:
+   # cat file.txt | awk ... | sux -n 20
+
